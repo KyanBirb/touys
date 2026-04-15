@@ -1,0 +1,7 @@
+{
+  "item.camera_click": {
+    "sounds": [
+      "touys:item/camera_click"
+    ]
+  }
+}

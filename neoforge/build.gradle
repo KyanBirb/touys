@@ -1,0 +1,67 @@
+plugins {
+    id 'multiloader-loader'
+    id 'net.neoforged.moddev'
+    id "me.modmuss50.mod-publish-plugin" version "1.1.0"
+}
+
+def generatedResources = project(":common").file("src/generated/resources")
+def commonResources = project(":common").file("src/main/resources")
+
+neoForge {
+    version = neoforge_version
+    // Automatically enable neoforge AccessTransformers if the file exists
+    def at = project(':common').file('src/main/resources/META-INF/accesstransformer.cfg')
+    if (at.exists()) {
+        accessTransformers.from(at.absolutePath)
+    }
+    parchment {
+        minecraftVersion = parchment_minecraft
+        mappingsVersion = parchment_version
+    }
+    runs {
+        configureEach {
+            systemProperty('neoforge.enabledGameTestNamespaces', mod_id)
+            ideName = "NeoForge ${it.name.capitalize()} (${project.path})" // Unify the run config names with fabric
+        }
+        client {
+            client()
+            gameDirectory = project.file('runs/client')
+        }
+        data {
+            data()
+            gameDirectory = project.file('runs/data')
+            programArguments.addAll '--all',
+                    '--mod', 'touys',
+                    '--output', generatedResources.absolutePath,
+                    '--existing', commonResources.absolutePath
+        }
+        server {
+            server()
+            gameDirectory = project.file('runs/server')
+
+        }
+    }
+    mods {
+        "${mod_id}" {
+            sourceSet sourceSets.main
+        }
+    }
+}
+
+dependencies {
+    implementation("foundry.veil:veil-neoforge-${project.minecraft_version}:${project.veil_version}") {
+        exclude group: "maven.modrinth"
+    }
+
+    compileOnly "dev.ryanhcode.sable-companion:sable-companion-common-$minecraft_version:$sable_companion_version"
+    implementation("dev.ryanhcode.sable:sable-neoforge-${minecraft_version}:${sable_version}") {
+        exclude group: "foundry.veil"
+    }
+
+    compileOnly("dev.simulated_team.simulated:simulated-neoforge-$minecraft_version:$simulated_version")
+}
+
+
+sourceSets.main.resources {
+    srcDir generatedResources.absolutePath
+}

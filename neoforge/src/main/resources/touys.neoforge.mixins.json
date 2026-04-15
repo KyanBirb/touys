@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.kyanbirb.touys.neoforge.mixin",
+  "plugin": "dev.kyanbirb.touys.TouysMixinPluginImpl",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "compatibility.simulated.PhysicsStaffServerHandlerMixin",
+    "compatibility.simulated.SimulatedMixin"
+  ],
+  "client": [
+  ],
+  "server": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

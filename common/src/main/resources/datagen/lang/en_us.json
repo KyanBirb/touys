@@ -1,0 +1,60 @@
+{
+  "itemGroup.touys": "Sable Touys",
+  "item.touys": {
+
+    "clone_gun.description": [
+      "§f[Shift + R-Click]§7 Copies the targeted sub-level. If there's no target, clears the contained sub-level.",
+      "§f[R-Click]§7 Places a copy of the contained sub-level."
+    ],
+
+    "evil_ass_orb.description": [
+      "§f[Hold R-Click]§7 Removes any targeted sub-level instantly."
+    ],
+
+    "camcorder.description": [
+      "§f[R-Click]§7 Starts a recording of the targeted sub-level. If already recording, ends the recording.",
+      "§f[Shift + R-Click]§7 Discards the current recording."
+    ],
+
+    "tape.description": [
+      "§f[R-Click]§7 Replays the contained recording to the targeted or tracked sub-level.",
+      "§f[Shift + R-Click]§7 Tracks the targeted sub-level. If there's no target, clear the tracked sub-level."
+    ],
+
+    "bubble_blower.description": [
+      "§f[R-Click Block]§7 Sets the start of the assembly region. If clicked again, assembles all blocks in the region.",
+      "§f[Shift + R-Click]§7 Discards the current region."
+    ],
+
+    "camera.description": [
+      "§f[R-Click]§7 Opens a screen for selecting sub-levels to capture."
+    ],
+
+    "photo.description": [
+      "§f[R-Click]§7 Restores all captured sub-levels to their positions in the snapshot."
+    ],
+
+    "crowbar.description": [
+      "§f[L-Click Sub-Level]§7 Pushes the sub-level.",
+      "§f[Stack On Crowbar]§7 Combines the strengths of both Crowbars into one item."
+    ]
+  },
+
+  "block.touys.projector.description": [
+    "§f[R-Click With Item]§7 Inserts the held Tape or Photo.",
+    "§f[Powered]§7 Activates the item it contains."
+  ],
+
+  "touys.tooltip.contains": "Contains: %s",
+  "touys.tooltip.recording": "%ss recording",
+  "touys.tooltip.snapshot": "Snapshot of %s sub-level%s",
+  "touys.tooltip.tracking": "Tracking: %s",
+  "touys.tooltip.description": "Hold Shift for description",
+  "touys.message.copy": "Copied %s",
+  "touys.message.cloned": "Cloned %s",
+  "touys.message.cleared": "Cleared sub-level",
+  "touys.message.removed": "Removed %s",
+  "touys.message.recording_started": "Recording started",
+  "touys.message.recording_stopped": "Recording stopped",
+  "touys.message.replay_started": "Replay started"
+}

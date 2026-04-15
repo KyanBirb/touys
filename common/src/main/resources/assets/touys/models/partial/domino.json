@@ -1,0 +1,42 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "touys:extra/domino",
+		"particle": "touys:extra/domino"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [5, 11, 2],
+			"faces": {
+				"north": {"uv": [0, 0, 5, 11], "texture": "#0"},
+				"east": {"uv": [0, 0, 1, 11], "texture": "#0"},
+				"south": {"uv": [0, 0, 5, 11], "texture": "#0"},
+				"west": {"uv": [4, 0, 5, 11], "texture": "#0"},
+				"up": {"uv": [0, 0, 5, 1], "texture": "#0"},
+				"down": {"uv": [0, 10, 5, 11], "texture": "#0"}
+			}
+		},
+		{
+			"from": [6, -1, -1],
+			"to": [-1, 12, 3],
+			"rotation": {"angle": 0, "axis": "y", "origin": [7, 0, 0]},
+			"faces": {
+				"north": {"uv": [0, 5, 5, 6], "texture": "#0"},
+				"east": {"uv": [0, 5, 1, 6], "texture": "#0"},
+				"south": {"uv": [0, 5, 5, 6], "texture": "#0"},
+				"west": {"uv": [4, 5, 5, 6], "texture": "#0"},
+				"up": {"uv": [0, 5, 5, 6], "texture": "#0"},
+				"down": {"uv": [0, 5, 5, 6], "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"gui": {
+			"rotation": [-21.57, -25.79, -31.7],
+			"translation": [2.75, 3.25, 0],
+			"scale": [1.18, 1.18, 1.18]
+		}
+	}
+}

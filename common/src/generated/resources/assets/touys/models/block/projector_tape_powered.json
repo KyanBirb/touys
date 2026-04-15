@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "touys:block/projector_bottom_tape",
+    "side": "touys:block/projector_side_powered",
+    "top": "touys:block/projector_top"
+  }
+}

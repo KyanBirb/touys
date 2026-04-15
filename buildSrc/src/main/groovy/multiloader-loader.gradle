@@ -1,0 +1,79 @@
+plugins {
+    id 'multiloader-common'
+    id "me.modmuss50.mod-publish-plugin"
+}
+
+configurations {
+    commonJava {
+        canBeResolved = true
+    }
+    commonResources {
+        canBeResolved = true
+    }
+}
+
+dependencies {
+    compileOnly(project(':common')) {
+        capabilities {
+            requireCapability "$group:$mod_id"
+        }
+    }
+    commonJava project(path: ':common', configuration: 'commonJava')
+    commonResources project(path: ':common', configuration: 'commonResources')
+}
+
+tasks.named('compileJava', JavaCompile) {
+    dependsOn(configurations.commonJava)
+    source(configurations.commonJava)
+}
+
+processResources {
+    dependsOn(configurations.commonResources)
+    from(configurations.commonResources)
+}
+
+tasks.named('javadoc', Javadoc).configure {
+    dependsOn(configurations.commonJava)
+    source(configurations.commonJava)
+}
+
+tasks.named('sourcesJar', Jar) {
+    dependsOn(configurations.commonJava)
+    from(configurations.commonJava)
+    dependsOn(configurations.commonResources)
+    from(configurations.commonResources)
+}
+
+publishMods {
+    dryRun = true
+    def modrinthToken = project.findProperty("modrinthPublishToken") ?: ''
+    def curseforgeToken = project.findProperty("curseforgePublishToken") ?: ''
+    def changelogFile = rootProject.file("changelog.md")
+
+    type = STABLE
+    file = jar.archiveFile
+    changelog = changelogFile.text
+    version = "$project.name-$project.version"
+    def name = project.name == "fabric" ? "Fabric" : "NeoForge"
+    displayName = "[$name] $mod_name $project.version"
+    modLoaders.add(project.name)
+
+    modrinth {
+        accessToken = modrinthToken
+        projectId = "HHlTF7u0"
+        minecraftVersions.add(minecraft_version)
+        requires("sable")
+    }
+
+    /*
+    curseforge {
+        accessToken = curseforgeToken
+        projectId = "1486358"
+        clientRequired = true
+        serverRequired = true
+        minecraftVersions.add(minecraft_version)
+        javaVersions.add(JavaVersion.VERSION_21)
+        requires("sable")
+    }
+    */
+}

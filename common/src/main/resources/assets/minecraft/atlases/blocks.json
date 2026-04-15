@@ -1,0 +1,12 @@
+{
+    "sources": [
+        {
+            "type": "single",
+            "resource": "touys:extra/bubble"
+        },
+        {
+            "type": "single",
+            "resource": "touys:extra/domino"
+        }
+    ]
+}

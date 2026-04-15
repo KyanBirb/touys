@@ -1,0 +1,108 @@
+{
+  "variants": {
+    "facing=down,powered=false,tape=false": {
+      "model": "touys:block/projector",
+      "x": 180
+    },
+    "facing=down,powered=false,tape=true": {
+      "model": "touys:block/projector_tape",
+      "x": 180
+    },
+    "facing=down,powered=true,tape=false": {
+      "model": "touys:block/projector_powered",
+      "x": 180
+    },
+    "facing=down,powered=true,tape=true": {
+      "model": "touys:block/projector_tape_powered",
+      "x": 180
+    },
+    "facing=east,powered=false,tape=false": {
+      "model": "touys:block/projector",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,powered=false,tape=true": {
+      "model": "touys:block/projector_tape",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,powered=true,tape=false": {
+      "model": "touys:block/projector_powered",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,powered=true,tape=true": {
+      "model": "touys:block/projector_tape_powered",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north,powered=false,tape=false": {
+      "model": "touys:block/projector",
+      "x": 90
+    },
+    "facing=north,powered=false,tape=true": {
+      "model": "touys:block/projector_tape",
+      "x": 90
+    },
+    "facing=north,powered=true,tape=false": {
+      "model": "touys:block/projector_powered",
+      "x": 90
+    },
+    "facing=north,powered=true,tape=true": {
+      "model": "touys:block/projector_tape_powered",
+      "x": 90
+    },
+    "facing=south,powered=false,tape=false": {
+      "model": "touys:block/projector",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,powered=false,tape=true": {
+      "model": "touys:block/projector_tape",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,powered=true,tape=false": {
+      "model": "touys:block/projector_powered",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,powered=true,tape=true": {
+      "model": "touys:block/projector_tape_powered",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up,powered=false,tape=false": {
+      "model": "touys:block/projector"
+    },
+    "facing=up,powered=false,tape=true": {
+      "model": "touys:block/projector_tape"
+    },
+    "facing=up,powered=true,tape=false": {
+      "model": "touys:block/projector_powered"
+    },
+    "facing=up,powered=true,tape=true": {
+      "model": "touys:block/projector_tape_powered"
+    },
+    "facing=west,powered=false,tape=false": {
+      "model": "touys:block/projector",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,powered=false,tape=true": {
+      "model": "touys:block/projector_tape",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,powered=true,tape=false": {
+      "model": "touys:block/projector_powered",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,powered=true,tape=true": {
+      "model": "touys:block/projector_tape_powered",
+      "x": 90,
+      "y": 270
+    }
+  }
+}
