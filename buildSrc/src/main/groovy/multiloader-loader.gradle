@@ -45,7 +45,7 @@ tasks.named('sourcesJar', Jar) {
 }
 
 publishMods {
-    dryRun = true
+//    dryRun = true
     def modrinthToken = project.findProperty("modrinthPublishToken") ?: ''
     def curseforgeToken = project.findProperty("curseforgePublishToken") ?: ''
     def changelogFile = rootProject.file("changelog.md")
@@ -63,6 +63,9 @@ publishMods {
         projectId = "HHlTF7u0"
         minecraftVersions.add(minecraft_version)
         requires("sable")
+        if(project.name == "fabric") {
+            requires("fabric-api")
+        }
     }
 
     /*
