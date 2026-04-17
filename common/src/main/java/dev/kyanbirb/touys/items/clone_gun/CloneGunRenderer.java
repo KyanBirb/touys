@@ -70,8 +70,8 @@ public class CloneGunRenderer implements CustomItemRenderer {
 		poseStack.mulPose(Axis.XP.rotation((float) Math.toRadians(-22.5f))); // align with screen
 		poseStack.scale(1, -1, 1); // flip along y
 		float xOff = context == ItemDisplayContext.FIRST_PERSON_LEFT_HAND ?
-				7.0f : 6.3f;
-		poseStack.translate(xOff / 16f, -2.5 / 16f, 10.07 / 16f); // position on top left of screen
+				6.8f : 6.6f;
+		poseStack.translate(xOff / 16f, -3.5 / 16f, 10.5 / 16f); // position on top left of screen
 
 		float scale = 0.005f;
 		poseStack.scale(scale, scale, scale);
