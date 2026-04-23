@@ -44,5 +44,6 @@
   "touys.item.recording.discarded": "Recording discarded",
   "touys.item.assembly.created": "Created sub-level",
   "touys.item.assembly.discarded": "Selection discarded",
-  "touys.item.assembly.invalid_selection": "Invalid selection"
+  "touys.item.assembly.invalid_selection": "Invalid selection",
+  "touys.item.replay.started": "Replay started"
 }

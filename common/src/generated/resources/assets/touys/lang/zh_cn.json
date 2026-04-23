@@ -44,5 +44,6 @@
     "touys.item.recording.discarded": "录制已取消",
     "touys.item.assembly.created": "已创建子关卡",
     "touys.item.assembly.discarded": "已取消选择",
-    "touys.item.assembly.invalid_selection": "无效的选择"
+    "touys.item.assembly.invalid_selection": "无效的选择",
+    "touys.item.replay.started": "已开始回放"
 }
