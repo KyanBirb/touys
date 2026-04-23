@@ -1,0 +1,60 @@
+{
+  "itemGroup.touys": "Sable 玩具",
+  "item.touys": {
+
+    "clone_gun.description": [
+      "§f[Shift + 右键]§7 复制瞄准的子空间。若无目标，则清空已存储的子空间。",
+      "§f[右键]§7 放置已存储子空间的副本。"
+    ],
+
+    "evil_ass_orb.description": [
+      "§f[长按右键]§7 立即移除任意瞄准的子空间。"
+    ],
+
+    "camcorder.description": [
+      "§f[右键]§7 开始录制瞄准的子空间。若正在录制，则结束录制。",
+      "§f[Shift + 右键]§7 丢弃当前录制内容。"
+    ],
+
+    "tape.description": [
+      "§f[右键]§7 向瞄准或追踪的子空间回放已存储的录制内容。",
+      "§f[Shift + 右键]§7 追踪瞄准的子空间。若无目标，则清空追踪的子空间。"
+    ],
+
+    "bubble_blower.description": [
+      "§f[右键方块]§7 设置拼装区域起点。再次点击则拼装区域内所有方块。",
+      "§f[Shift + 右键]§7 丢弃当前设置的区域。"
+    ],
+
+    "camera.description": [
+      "§f[右键]§7 打开界面，选择要抓拍的子空间。"
+    ],
+
+    "photo.description": [
+      "§f[右键]§7 将所有抓拍的子空间恢复至快照中的位置。"
+    ],
+
+    "crowbar.description": [
+      "§f[左键子空间]§7 推动该子空间。",
+      "§f[叠放在撬棍上]§7 将两把撬棍的效果合并为一件物品。"
+    ]
+  },
+
+  "block.touys.projector.description": [
+    "§f[手持物品右键]§7 插入手中的录像带或照片。",
+    "§f[通电时]§7 激活其内部存储的物品。"
+  ],
+
+  "touys.tooltip.contains": "包含：%s",
+  "touys.tooltip.recording": "已录制%s秒",
+  "touys.tooltip.snapshot": "%s个子空间的快照",
+  "touys.tooltip.tracking": "追踪中：%s",
+  "touys.tooltip.description": "按住Shift查看说明",
+  "touys.message.copy": "已复制%s",
+  "touys.message.cloned": "已克隆%s",
+  "touys.message.cleared": "已清空子空间",
+  "touys.message.removed": "已移除%s",
+  "touys.message.recording_started": "开始录制",
+  "touys.message.recording_stopped": "停止录制",
+  "touys.message.replay_started": "开始回放"
+}
