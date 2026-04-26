@@ -3,10 +3,12 @@ package dev.kyanbirb.touys.items.crowbar;
 import dev.kyanbirb.touys.SableTouys;
 import dev.kyanbirb.touys.index.TouysItems;
 import dev.ryanhcode.sable.index.SableAttributes;
+import foundry.veil.api.client.color.Color;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponentPatch;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.Mth;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.SlotAccess;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -51,7 +53,7 @@ public class CrowbarItem extends Item {
         return true;
     }
 
-    private static @Nullable AttributeModifier getPunchAttribute(ItemStack stack) {
+    public static @Nullable AttributeModifier getPunchAttribute(ItemStack stack) {
         AttributeModifier stackModifier = null;
         ItemAttributeModifiers stackModifiers = stack.get(DataComponents.ATTRIBUTE_MODIFIERS);
         for (ItemAttributeModifiers.Entry entry : stackModifiers.modifiers()) {
@@ -77,4 +79,30 @@ public class CrowbarItem extends Item {
     public static @NotNull AttributeModifier createModifier(double strength) {
         return new AttributeModifier(ATTRIBUTE_ID, strength, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
     }
+
+    public static int getColor(ItemStack stack, int index) {
+        if(index == 1) {
+            AttributeModifier punchAttribute = CrowbarItem.getPunchAttribute(stack);
+            if(punchAttribute != null) {
+                float amount = (float) punchAttribute.amount() / 4096;
+                float value = (amount / (amount + 0.005f));
+
+                Color green = new Color(0xFF00FF00);
+                Color yellow = new Color(0xFFFFFF00);
+                Color red = new Color(0xFFFF0000);
+                Color color = new Color();
+
+                value = Mth.clamp(value, 0, 1);
+                if(value <= 0.5) {
+                    green.lerp(yellow, value * 2, color);
+                } else {
+                    yellow.lerp(red, (value - 0.5f) * 2, color);
+                }
+
+                return color.argb();
+            }
+        }
+        return -1;
+    }
+
 }

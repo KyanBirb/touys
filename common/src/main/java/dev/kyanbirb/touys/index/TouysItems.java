@@ -52,8 +52,7 @@ public class TouysItems {
 
 	public static final RegistryObject<CrowbarItem> CROWBAR = register("crowbar", CrowbarItem::new, properties -> properties
 			.stacksTo(1)
-			.component(TouysComponents.ITEM_DESCRIPTION, 2)
-			.attributes(CrowbarItem.createAttributes(1.0f)));
+			.component(TouysComponents.ITEM_DESCRIPTION, 2));
 
 	private static <T extends Item> RegistryObject<T> register(String id, Function<Item.Properties, T> factory, UnaryOperator<Item.Properties> properties) {
 		TouysLang.addItem(id);

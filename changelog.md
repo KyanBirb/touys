@@ -1,1 +1,2 @@
-- Update Bubble Blower texture
+- Implement new Crowbar assets
+- Fix Crowbar tooltip sometimes crashing on Fabric

@@ -11,6 +11,7 @@ import dev.kyanbirb.touys.index.TouysModels;
 import dev.kyanbirb.touys.items.bubble_blower.BubbleBlowerRenderer;
 import dev.kyanbirb.touys.items.camera.CameraGuiLayer;
 import dev.kyanbirb.touys.items.clone_gun.CloneGunRenderer;
+import dev.kyanbirb.touys.items.crowbar.CrowbarItem;
 import dev.kyanbirb.touys.items.evil_ass_orb.EvilAssOrbRenderer;
 import dev.ryanhcode.sable.api.sublevel.SubLevelContainer;
 import dev.ryanhcode.sable.sublevel.SubLevel;
@@ -20,17 +21,15 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.client.Camera;
 import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.color.item.ItemColor;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.client.renderer.LevelRenderer;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.culling.Frustum;
 import net.minecraft.client.resources.model.ModelResourceLocation;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
-import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -42,6 +41,7 @@ import org.joml.Matrix4fc;
 import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
+import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
 public class ClientEvents {
@@ -121,4 +121,8 @@ public class ClientEvents {
 		}
 		initRenderers();
     }
+
+	public static void registerItemColorHandlers(BiConsumer<ItemColor, ItemLike> registry) {
+		registry.accept(CrowbarItem::getColor, TouysItems.CROWBAR.get());
+	}
 }
