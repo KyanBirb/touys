@@ -35,5 +35,15 @@
   "touys.tooltip.description": "Hold Shift for description",
   "touys.tooltip.recording": "%ss recording",
   "touys.tooltip.snapshot": "Snapshot of %s sub-level%s",
-  "touys.tooltip.tracking": "Tracking: %s"
+  "touys.tooltip.tracking": "Tracking: %s",
+  "touys.gui.cancel" : "Cancel",
+  "touys.gui.capture.hint" : "Click and drag over sub-level(s) to capture",
+  "touys.gui.capture.success" : "Captured %s sub-level(s)",
+  "touys.item.recording.start": "Recording started",
+  "touys.item.recording.saved": "Recording saved",
+  "touys.item.recording.discarded": "Recording discarded",
+  "touys.item.assembly.created": "Created sub-level",
+  "touys.item.assembly.discarded": "Selection discarded",
+  "touys.item.assembly.invalid_selection": "Invalid selection",
+  "touys.item.replay.started": "Replay started"
 }

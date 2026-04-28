@@ -37,13 +37,13 @@ public class CamcorderItem extends Item {
                 item.applyComponents(DataComponentMap.builder()
                         .set(TouysComponents.TRACKED_SUB_LEVEL, subLevel.getUniqueId())
                         .build());
-                player.displayClientMessage(Component.literal("Recording started"), true);
+                player.displayClientMessage(Component.translatable("touys.item.recording.start"), true);
                 return InteractionResultHolder.success(item);
             } else if(item.has(TouysComponents.TRACKED_SUB_LEVEL)) {
                 SubLevel recorded = SubLevelContainer.getContainer(level).getSubLevel(item.get(TouysComponents.TRACKED_SUB_LEVEL));
-                Component message = Component.literal("Recording saved");
+                Component message = Component.translatable("touys.item.recording.saved");
                 if(player.isShiftKeyDown() || recorded == null) {
-                    message = Component.literal("Recording discarded");
+                    message = Component.translatable("touys.item.recording.discarded");
                 } else {
                     List<Frame> recording = RecordingManager.getRecording(recorded);
                     player.addItem(TapeItem.create(recording));

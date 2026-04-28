@@ -64,7 +64,7 @@ public class TapeItem extends Item implements Projectable<List<Frame>> {
                         replay.name = item.get(DataComponents.CUSTOM_NAME).getString();
                     }
 
-                    player.displayClientMessage(Component.literal("Replay started"), true);
+                    player.displayClientMessage(Component.translatable("touys.item.replay.started"), true);
                     return InteractionResultHolder.success(item);
                 }
             }

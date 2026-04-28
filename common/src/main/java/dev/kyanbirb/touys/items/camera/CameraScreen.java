@@ -42,7 +42,7 @@ public class CameraScreen extends Screen {
         int centerY = this.height - this.height / 10;
         int buttonWidth = 100;
         int buttonHeight = 20;
-        Button.Builder cancelButton = new Button.Builder(Component.literal("Cancel"), button -> this.onClose())
+        Button.Builder cancelButton = new Button.Builder(Component.translatable("gui.cancel"), button -> this.onClose())
                 .pos(centerX - buttonWidth / 2, centerY - buttonHeight / 2)
                 .size(buttonWidth, buttonHeight);
 
@@ -53,7 +53,7 @@ public class CameraScreen extends Screen {
     public void render(GuiGraphics graphics, int pMouseX, int pMouseY, float pPartialTick) {
         super.render(graphics, pMouseX, pMouseY, pPartialTick);
 
-        graphics.drawCenteredString(this.font, "Click and drag over sub-level(s) to capture", this.width / 2, this.height / 20, 0xFFFFFFFF);
+        graphics.drawCenteredString(this.font, Component.translatable("touys.gui.capture.hint"), this.width / 2, this.height / 20, 0xFFFFFFFF);
 
         if(this.dragging) {
             drawSelectionBox(graphics);
@@ -97,7 +97,10 @@ public class CameraScreen extends Screen {
                         (int) (this.height - mousePos.y * this.height)
                 );
                 String s = subLevels.size() == 1 ? "" : "s";
-                this.minecraft.player.displayClientMessage(Component.literal("Captured %s sub-level%s".formatted(subLevels.size(), s)), true);
+                this.minecraft.player.displayClientMessage(
+                        Component.translatable("touys.gui.capture.success", subLevels.size()),
+                        true
+                );
                 this.minecraft.player.playSound(TouysSounds.CAMERA_CLICK.value(), 1.0f, (float) (1.0f + Math.random() * 0.5f));
                 this.onClose();
             }

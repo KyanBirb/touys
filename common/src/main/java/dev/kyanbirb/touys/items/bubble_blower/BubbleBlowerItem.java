@@ -44,13 +44,13 @@ public class BubbleBlowerItem extends Item {
                 if(inSameGrid(level, startPos, endPos)) {
                     assembleBlocks(level, startPos, endPos);
                     player.playSound(SoundEvents.BUBBLE_COLUMN_BUBBLE_POP, 5.0f, 1.5f);
-                    player.displayClientMessage(Component.literal("Created sub-level"), true);
+                    player.displayClientMessage(Component.translatable("touys.item.assembly.created"), true);
 
                 } else {
                     return InteractionResult.FAIL;
                 }
             } else {
-                player.displayClientMessage(Component.literal("Selection discarded"), true);
+                player.displayClientMessage(Component.translatable("touys.item.assembly.discarded"), true);
                 player.playSound(SoundEvents.ITEM_PICKUP, 1.0f, 0.5f);
 
             }
@@ -72,7 +72,7 @@ public class BubbleBlowerItem extends Item {
         if(start != null && Minecraft.getInstance().hitResult.getType() == HitResult.Type.BLOCK) {
             BlockHitResult hitResult = (BlockHitResult) Minecraft.getInstance().hitResult;
             if(!inSameGrid(level, start, hitResult.getBlockPos())) {
-                player.displayClientMessage(Component.literal("Invalid selection").withStyle(ChatFormatting.RED), true);
+                player.displayClientMessage(Component.translatable("touys.item.assembly.invalid_selection").withStyle(ChatFormatting.RED), true);
             }
         }
     }
