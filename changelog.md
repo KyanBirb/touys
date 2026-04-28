@@ -1,2 +1,1 @@
-- Implement new Crowbar assets
-- Fix Crowbar tooltip sometimes crashing on Fabric
+- Update to Sable 1.2.0
