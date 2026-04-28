@@ -7,6 +7,7 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.ClientTickEvent;
+import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 import net.neoforged.neoforge.client.event.RegisterGuiLayersEvent;
 import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
 
@@ -27,6 +28,11 @@ public class NeoForgeClientEvents {
 
 	@EventBusSubscriber(modid = SableTouys.MOD_ID, value = Dist.CLIENT)
 	public static class ModEvents {
+
+		@SubscribeEvent
+		public static void registerItemColorHandler(RegisterColorHandlersEvent.Item event) {
+			ClientEvents.registerItemColorHandlers(event::register);
+		}
 
 		@SubscribeEvent
 		public static void renderGui(RegisterGuiLayersEvent event) {

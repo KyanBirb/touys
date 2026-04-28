@@ -1,1 +1,1 @@
-- Update Bubble Blower texture
+- Update to Sable 1.2.0
